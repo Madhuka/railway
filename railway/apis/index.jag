@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>TestAPI-Railway</title>
+</head>
+<body>
+<h1>Railway API</h1>
+<!-- device
+{"id":"int","IMEI":"string"}
+
+deviceevents
+{"EventID":"int","Event":"string"}
+
+gateupdatecache
+{"GateID":"int","IMEI":"string","EventID":"int","txTime":"string","fxTime":"string","flags":"string","GPSstatus":"string","GSM":"string"}
+
+gateupdates
+{"GateID":"int","IMEI":"string","EventID":"int","txTime":"string","fxTime":"string","flags":"string","GPSstatus":"string","GSM":"string"}
+
+location
+{"LocationID":"int","LocationName":"string","LocationAltitude":"string","LocationLatitude":"string","LocationLongitude":"string"}
+
+railgate
+{"GateID":"int","LocationID":"int"} -->
+<a href="./device.jag">Device</a><br>
+<a href="./deviceevents.jag">Device Events</a><br>
+<a href="./gateupdatecache.jag">Gate Update Cache</a><br>
+<a href="./gateupdates.jag">Gate Updates</a><br>
+<a href="./location.jag">Location</a><br>
+<a href="./railgate.jag">Railgate</a><br>
+<body>
+</html>

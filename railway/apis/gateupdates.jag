@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>MadhukaTestAPI-gateupdates</title>
+</head>
+<body>
+<h1>GateupdatesAPI</h1>
+<a href="api/gateupdates.jag?action=settabel">SetTableGateupdates</a><br>
+<a href="api/gateupdates.jag?action=addgateupdates&gateupdatesGateID=18&gateupdatesIMEI=testString&gateupdatesEventID=18&gateupdatesTxTime=testString&gateupdatesFxTime=testString&gateupdatesFlags=testString&gateupdatesGPSstatus=testString&gateupdatesGSM=testString&">AddGateupdates</a><br>
+<a href="api/gateupdates.jag?action=listgateupdates">ListGateupdates</a><br>
+<a href="api/gateupdates.jag?action=updategateupdates&&gateupdatesGateID=18&gateupdatesIMEI=testString&gateupdatesEventID=18&gateupdatesTxTime=testString&gateupdatesFxTime=testString&gateupdatesFlags=testString&gateupdatesGPSstatus=testString&gateupdatesGSM=testString&">UpdateGateupdates</a><br>
+<a href="api/gateupdates.jag?action=getgateupdates&">GetGateupdates</a><br>
+<a href="api/gateupdates.jag?action=deletgateupdates&">DeletGateupdates</a><br>
+<body>
+</html>

@@ -1,0 +1,91 @@
+<%
+
+function listlocation() {
+	var db_qury = db_query_location_view;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function settabel() {
+	var db_qury = db_query_location_create;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function addlocation(locationLocationID, locationLocationName, locationLocationAltitude, locationLocationLatitude, locationLocationLongitude) {
+	log.info("add location");
+	if(locationLocationID != null && locationLocationName != null && locationLocationAltitude != null && locationLocationLatitude != null && locationLocationLongitude != null ){
+	var db_qury = db_query_location_add(null ,locationLocationID, locationLocationName, locationLocationAltitude, locationLocationLatitude, locationLocationLongitude);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter locationLocationID, locationLocationName, locationLocationAltitude, locationLocationLatitude, locationLocationLongitude");
+	}
+}
+
+function updatelocation(,locationLocationID, locationLocationName, locationLocationAltitude, locationLocationLatitude, locationLocationLongitude) {
+	log.info("update location");
+	if( && locationLocationID != null && locationLocationName != null && locationLocationAltitude != null && locationLocationLatitude != null && locationLocationLongitude != null ){
+	var db_qury = db_query_location_update( ,locationLocationID, locationLocationName, locationLocationAltitude, locationLocationLatitude, locationLocationLongitude);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter , locationLocationID, locationLocationName, locationLocationAltitude, locationLocationLatitude, locationLocationLongitude");
+	}
+}
+
+function deletlocation() {
+	log.info("delet location ");
+	if(){
+	var db_qury = db_query_location_delet();
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter ");
+	}
+}
+
+function getlocation() {
+	log.info("get location ");
+	if(){
+	var db_qury = db_query_location_get();
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter ");
+	}
+}
+
+function invokeError(msg) {
+	log.info(msg);
+	return {
+		"error" : true,
+		"errorMsg" : msg
+	};
+}
+
+%>

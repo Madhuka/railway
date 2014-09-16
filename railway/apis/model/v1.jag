@@ -1,0 +1,16 @@
+<%
+var db_query_device_view = "SELECT * FROM  `device` LIMIT 0 , 30";
+var db_query_deviceevents_view = "SELECT * FROM `deviceevents` LIMIT 0 , 30";
+var db_query_gateupdatecache_view = "SELECT * FROM `gateupdatecache` LIMIT 0 , 30";
+var db_query_location_view = "SELECT * FROM `location` LIMIT 0 , 30";
+var db_query_gate_location_view = "SELECT railgate.GateID, location.LocationLatitude, location.LocationLongitude, location.LocationName FROM railgate INNER JOIN location ON railgate.GateID = location.LocationID";
+
+function db_query_gate_update(gate_id) {
+var outStr = "SELECT * FROM `gateupdates` WHERE `GateID` = "+gate_id+" LIMIT 0 , 30";
+return outStr;
+}
+function db_query_gatelocation_bygateid(gate_id) {
+var outStr = db_query_gate_location_view + " WHERE `GateID` = "+gate_id;
+return outStr;
+}
+%>

@@ -1,0 +1,16 @@
+<%
+var db_query_location_view = "SELECT * FROM  `location` LIMIT 0 , 30";
+var db_query_location_create = "CREATE TABLE  `location` (, `location_LocationID` INT NOT NULL, `location_LocationName` float NOT NULL, `location_LocationAltitude` VARCHAR( 120 ) NOT NULL, `location_LocationLatitude` float , `location_LocationLongitude` float ,`location_create_time` TIMESTAMP NOT NULL ,`location_modified_time` TIMESTAMP NOT NULL ,)";
+
+
+
+function db_query_location_add(,location_LocationID,location_LocationName,location_LocationAltitude,location_LocationLatitude,location_LocationLongitude) {
+var outStr = "INSERT INTO  `location` (, `location_LocationID`, `location_LocationName`, `location_LocationAltitude`, `location_LocationLatitude`, `location_LocationLongitude`,`location_create_time` ,`location_modified_time`)VALUES (,'"+location_LocationID+"','"+location_LocationName+"','"+location_LocationAltitude+"','"+location_LocationLatitude+"','"+location_LocationLongitude+"',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);";
+return outStr;
+}
+
+function db_query_location_update(,location_LocationID,location_LocationName,location_LocationAltitude,location_LocationLatitude,location_LocationLongitude) {
+var outStr = "UPDATE  `location` SET  `location_LocationID` =  '"+location_LocationID+"',`location_LocationName` =  '"+location_LocationName+"',`location_LocationAltitude` =  '"+location_LocationAltitude+"',`location_LocationLatitude` =  '"+location_LocationLatitude+"',`location_LocationLongitude` =  '"+location_LocationLongitude+"',`location_modified_time` = CURRENT_TIMESTAMP WHERE  `location_id` =" + location_id + " LIMIT 1 ;";
+return outStr;
+}
+%>

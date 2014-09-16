@@ -1,0 +1,16 @@
+<%
+var db_query_railgate_view = "SELECT * FROM  `railgate` LIMIT 0 , 30";
+var db_query_railgate_create = "CREATE TABLE  `railgate` (`railgate_GateID` INT NOT NULL, `railgate_LocationID` INT NOT NULL,`railgate_create_time` TIMESTAMP NOT NULL ,`railgate_modified_time` TIMESTAMP NOT NULL ,)";
+
+
+
+function db_query_railgate_add(railgate_GateID,railgate_LocationID) {
+var outStr = "INSERT INTO  `railgate` (`railgate_GateID`, `railgate_LocationID`,`railgate_create_time` ,`railgate_modified_time`)VALUES (,'"+railgate_GateID+"','"+railgate_LocationID+"',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);";
+return outStr;
+}
+
+function db_query_railgate_update(railgate_GateID,railgate_LocationID) {
+var outStr = "UPDATE  `railgate` SET  `railgate_GateID` =  '"+railgate_GateID+"',`railgate_LocationID` =  '"+railgate_LocationID+"',`railgate_modified_time` = CURRENT_TIMESTAMP WHERE  `railgate_id` =" + railgate_id + " LIMIT 1 ;";
+return outStr;
+}
+%>

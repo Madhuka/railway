@@ -1,0 +1,16 @@
+<%
+var db_query_deviceevents_view = "SELECT * FROM  `deviceevents` LIMIT 0 , 30";
+var db_query_deviceevents_create = "CREATE TABLE  `deviceevents` (, `deviceevents_EventID` INT NOT NULL, `deviceevents_Event` VARCHAR( 120 ) NOT NULL,`deviceevents_create_time` TIMESTAMP NOT NULL ,`deviceevents_modified_time` TIMESTAMP NOT NULL ,)";
+
+
+
+function db_query_deviceevents_add(,deviceevents_EventID,deviceevents_Event) {
+var outStr = "INSERT INTO  `deviceevents` (, `deviceevents_EventID`, `deviceevents_Event`,`deviceevents_create_time` ,`deviceevents_modified_time`)VALUES (,'"+deviceevents_EventID+"','"+deviceevents_Event+"',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);";
+return outStr;
+}
+
+function db_query_deviceevents_update(,deviceevents_EventID,deviceevents_Event) {
+var outStr = "UPDATE  `deviceevents` SET  `deviceevents_EventID` =  '"+deviceevents_EventID+"',`deviceevents_Event` =  '"+deviceevents_Event+"',`deviceevents_modified_time` = CURRENT_TIMESTAMP WHERE  `deviceevents_id` =" + deviceevents_id + " LIMIT 1 ;";
+return outStr;
+}
+%>

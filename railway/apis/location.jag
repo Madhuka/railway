@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>MadhukaTestAPI-location</title>
+</head>
+<body>
+<h1>LocationAPI</h1>
+<a href="api/location.jag?action=settabel">SetTableLocation</a><br>
+<a href="api/location.jag?action=addlocation&locationLocationID=18&locationLocationName=testString&locationLocationAltitude=testString&locationLocationLatitude=testString&locationLocationLongitude=testString&">AddLocation</a><br>
+<a href="api/location.jag?action=listlocation">ListLocation</a><br>
+<a href="api/location.jag?action=updatelocation&&locationLocationID=18&locationLocationName=testString&locationLocationAltitude=testString&locationLocationLatitude=testString&locationLocationLongitude=testString&">UpdateLocation</a><br>
+<a href="api/location.jag?action=getlocation&">GetLocation</a><br>
+<a href="api/location.jag?action=deletlocation&">DeletLocation</a><br>
+<body>
+</html>

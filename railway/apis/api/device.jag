@@ -1,0 +1,34 @@
+<%
+
+include("../model/dbinit.jag");
+include("../model/device.jag");
+include("../controller/device.jag");
+
+ var action = request.getParameter('action');
+ var deviceId = request.getParameter('deviceId');
+ var deviceIMEI = request.getParameter('deviceIMEI');
+
+switch(action) {
+case "listdevice":
+		print(listdevice());
+		break;
+	case "adddevice":
+		print(adddevice(deviceIMEI));
+		break;
+	case "updatedevice":
+		print(updatedevice(deviceId,deviceIMEI));
+		break;
+	case "deletdevice":
+		print(deletdevice(deviceId));
+		break;
+	case "getdevice":
+		print(getdevice(deviceId));
+		break;
+	case "settabel":
+		print(settabel());
+		break;
+	default:
+		print(invokeError("device action not define"));
+}
+
+%>

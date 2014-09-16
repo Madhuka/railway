@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>MadhukaTestAPI-gateupdatecache</title>
+</head>
+<body>
+<h1>GateupdatecacheAPI</h1>
+<a href="api/gateupdatecache.jag?action=settabel">SetTableGateupdatecache</a><br>
+<a href="api/gateupdatecache.jag?action=addgateupdatecache&gateupdatecacheGateID=18&gateupdatecacheIMEI=testString&gateupdatecacheEventID=18&gateupdatecacheTxTime=testString&gateupdatecacheFxTime=testString&gateupdatecacheFlags=testString&gateupdatecacheGPSstatus=testString&gateupdatecacheGSM=testString&">AddGateupdatecache</a><br>
+<a href="api/gateupdatecache.jag?action=listgateupdatecache">ListGateupdatecache</a><br>
+<a href="api/gateupdatecache.jag?action=updategateupdatecache&&gateupdatecacheGateID=18&gateupdatecacheIMEI=testString&gateupdatecacheEventID=18&gateupdatecacheTxTime=testString&gateupdatecacheFxTime=testString&gateupdatecacheFlags=testString&gateupdatecacheGPSstatus=testString&gateupdatecacheGSM=testString&">UpdateGateupdatecache</a><br>
+<a href="api/gateupdatecache.jag?action=getgateupdatecache&">GetGateupdatecache</a><br>
+<a href="api/gateupdatecache.jag?action=deletgateupdatecache&">DeletGateupdatecache</a><br>
+<body>
+</html>

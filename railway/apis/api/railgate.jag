@@ -1,0 +1,34 @@
+<%
+
+include("../model/dbinit.jag");
+include("../model/railgate.jag");
+include("../controller/railgate.jag");
+
+ var action = request.getParameter('action');
+ var railgateGateID = request.getParameter('railgateGateID');
+ var railgateLocationID = request.getParameter('railgateLocationID');
+
+switch(action) {
+case "listrailgate":
+		print(listrailgate());
+		break;
+	case "addrailgate":
+		print(addrailgate(railgateGateID, railgateLocationID));
+		break;
+	case "updaterailgate":
+		print(updaterailgate(railgateGateID, railgateLocationID));
+		break;
+	case "deletrailgate":
+		print(deletrailgate());
+		break;
+	case "getrailgate":
+		print(getrailgate());
+		break;
+	case "settabel":
+		print(settabel());
+		break;
+	default:
+		print(invokeError("railgate action not define"));
+}
+
+%>

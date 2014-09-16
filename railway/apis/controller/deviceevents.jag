@@ -1,0 +1,91 @@
+<%
+
+function listdeviceevents() {
+	var db_qury = db_query_deviceevents_view;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function settabel() {
+	var db_qury = db_query_deviceevents_create;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function adddeviceevents(deviceeventsEventID, deviceeventsEvent) {
+	log.info("add deviceevents");
+	if(deviceeventsEventID != null && deviceeventsEvent != null ){
+	var db_qury = db_query_deviceevents_add(null ,deviceeventsEventID, deviceeventsEvent);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter deviceeventsEventID, deviceeventsEvent");
+	}
+}
+
+function updatedeviceevents(,deviceeventsEventID, deviceeventsEvent) {
+	log.info("update deviceevents");
+	if( && deviceeventsEventID != null && deviceeventsEvent != null ){
+	var db_qury = db_query_deviceevents_update( ,deviceeventsEventID, deviceeventsEvent);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter , deviceeventsEventID, deviceeventsEvent");
+	}
+}
+
+function deletdeviceevents() {
+	log.info("delet deviceevents ");
+	if(){
+	var db_qury = db_query_deviceevents_delet();
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter ");
+	}
+}
+
+function getdeviceevents() {
+	log.info("get deviceevents ");
+	if(){
+	var db_qury = db_query_deviceevents_get();
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter ");
+	}
+}
+
+function invokeError(msg) {
+	log.info(msg);
+	return {
+		"error" : true,
+		"errorMsg" : msg
+	};
+}
+
+%>

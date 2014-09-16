@@ -1,0 +1,16 @@
+<%
+var db_query_gateupdates_view = "SELECT * FROM  `gateupdates` LIMIT 0 , 30";
+var db_query_gateupdates_create = "CREATE TABLE  `gateupdates` (, `gateupdates_GateID` INT NOT NULL, `gateupdates_IMEI` VARCHAR( 120 ) NOT NULL, `gateupdates_EventID` INT NOT NULL, `gateupdates_txTime` TIMESTAMP, `gateupdates_fxTime` TIMESTAMP, `gateupdates_flags` VARCHAR( 120 ) NOT NULL, `gateupdates_GPSstatus` VARCHAR( 120 ) NOT NULL, `gateupdates_GSM` VARCHAR( 120 ) NOT NULL,`gateupdates_create_time` TIMESTAMP NOT NULL ,`gateupdates_modified_time` TIMESTAMP NOT NULL ,)";
+
+
+
+function db_query_gateupdates_add(,gateupdates_GateID,gateupdates_IMEI,gateupdates_EventID,gateupdates_txTime,gateupdates_fxTime,gateupdates_flags,gateupdates_GPSstatus,gateupdates_GSM) {
+var outStr = "INSERT INTO  `gateupdates` (, `gateupdates_GateID`, `gateupdates_IMEI`, `gateupdates_EventID`, `gateupdates_txTime`, `gateupdates_fxTime`, `gateupdates_flags`, `gateupdates_GPSstatus`, `gateupdates_GSM`,`gateupdates_create_time` ,`gateupdates_modified_time`)VALUES (,'"+gateupdates_GateID+"','"+gateupdates_IMEI+"','"+gateupdates_EventID+"',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'"+gateupdates_flags+"','"+gateupdates_GPSstatus+"','"+gateupdates_GSM+"',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);";
+return outStr;
+}
+
+function db_query_gateupdates_update(,gateupdates_GateID,gateupdates_IMEI,gateupdates_EventID,gateupdates_txTime,gateupdates_fxTime,gateupdates_flags,gateupdates_GPSstatus,gateupdates_GSM) {
+var outStr = "UPDATE  `gateupdates` SET  `gateupdates_GateID` =  '"+gateupdates_GateID+"',`gateupdates_IMEI` =  '"+gateupdates_IMEI+"',`gateupdates_EventID` =  '"+gateupdates_EventID+"',`gateupdates_txTime` =  '"+gateupdates_txTime+"',`gateupdates_fxTime` =  '"+gateupdates_fxTime+"',`gateupdates_flags` =  '"+gateupdates_flags+"',`gateupdates_GPSstatus` =  '"+gateupdates_GPSstatus+"',`gateupdates_GSM` =  '"+gateupdates_GSM+"',`gateupdates_modified_time` = CURRENT_TIMESTAMP WHERE  `gateupdates_id` =" + gateupdates_id + " LIMIT 1 ;";
+return outStr;
+}
+%>

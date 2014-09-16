@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>MadhukaTestAPI-deviceevents</title>
+</head>
+<body>
+<h1>DeviceeventsAPI</h1>
+<a href="api/deviceevents.jag?action=settabel">SetTableDeviceevents</a><br>
+<a href="api/deviceevents.jag?action=adddeviceevents&deviceeventsEventID=18&deviceeventsEvent=testString&">AddDeviceevents</a><br>
+<a href="api/deviceevents.jag?action=listdeviceevents">ListDeviceevents</a><br>
+<a href="api/deviceevents.jag?action=updatedeviceevents&&deviceeventsEventID=18&deviceeventsEvent=testString&">UpdateDeviceevents</a><br>
+<a href="api/deviceevents.jag?action=getdeviceevents&">GetDeviceevents</a><br>
+<a href="api/deviceevents.jag?action=deletdeviceevents&">DeletDeviceevents</a><br>
+<body>
+</html>

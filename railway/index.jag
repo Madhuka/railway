@@ -1,0 +1,47 @@
+<html><head>
+<title>Railway System</title>
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<h1>Railway</h1>
+<div class="row">
+  <div class="col-md-8">.col-md-8</div>
+  
+  <div class="col-md-4">
+      <div class="well span4">
+   <ul class="nav nav-list">
+       <li class="active"><a href="#">Value 1 <i class=" icon-remove pull-right"></i></a></li>
+       <li><a href="#">Value 2</a></li>
+       <li><a href="#">Value 3</a></li>
+   </ul>
+</div>
+</div>
+</div>
+
+<div class="navbar">
+    <div class="navbar-inner">
+<a data-toggle="collapse" data-target=".nav-collapse" class="btn btn-navbar">
+<i class="icon-bar"></i>
+</a>
+
+<a class="brand" href="">New Icon Menu</a>
+
+        <div class="nav-collapse">
+            <ul class="nav nav-pills pull-right">
+                <li><a href=""><i class="icon-home icon-2x"></i> Home<br></a>
+                </li>
+                <li><a href=""><i class=" icon-pencil icon-2x"></i>About Us</a>
+                </li>
+                <li><a href=""><i class=" icon-briefcase icon-2x"></i>Portfolio</a>
+                </li>
+                <li><a href=""><i class=" icon-envelope icon-2x"></i>Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+
+
+</body></html>

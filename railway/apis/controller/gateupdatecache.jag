@@ -1,0 +1,91 @@
+<%
+
+function listgateupdatecache() {
+	var db_qury = db_query_gateupdatecache_view;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function settabel() {
+	var db_qury = db_query_gateupdatecache_create;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function addgateupdatecache(gateupdatecacheGateID, gateupdatecacheIMEI, gateupdatecacheEventID, gateupdatecacheTxTime, gateupdatecacheFxTime, gateupdatecacheFlags, gateupdatecacheGPSstatus, gateupdatecacheGSM) {
+	log.info("add gateupdatecache");
+	if(gateupdatecacheGateID != null && gateupdatecacheIMEI != null && gateupdatecacheEventID != null && gateupdatecacheTxTime != null && gateupdatecacheFxTime != null && gateupdatecacheFlags != null && gateupdatecacheGPSstatus != null && gateupdatecacheGSM != null ){
+	var db_qury = db_query_gateupdatecache_add(null ,gateupdatecacheGateID, gateupdatecacheIMEI, gateupdatecacheEventID, gateupdatecacheTxTime, gateupdatecacheFxTime, gateupdatecacheFlags, gateupdatecacheGPSstatus, gateupdatecacheGSM);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter gateupdatecacheGateID, gateupdatecacheIMEI, gateupdatecacheEventID, gateupdatecacheTxTime, gateupdatecacheFxTime, gateupdatecacheFlags, gateupdatecacheGPSstatus, gateupdatecacheGSM");
+	}
+}
+
+function updategateupdatecache(,gateupdatecacheGateID, gateupdatecacheIMEI, gateupdatecacheEventID, gateupdatecacheTxTime, gateupdatecacheFxTime, gateupdatecacheFlags, gateupdatecacheGPSstatus, gateupdatecacheGSM) {
+	log.info("update gateupdatecache");
+	if( && gateupdatecacheGateID != null && gateupdatecacheIMEI != null && gateupdatecacheEventID != null && gateupdatecacheTxTime != null && gateupdatecacheFxTime != null && gateupdatecacheFlags != null && gateupdatecacheGPSstatus != null && gateupdatecacheGSM != null ){
+	var db_qury = db_query_gateupdatecache_update( ,gateupdatecacheGateID, gateupdatecacheIMEI, gateupdatecacheEventID, gateupdatecacheTxTime, gateupdatecacheFxTime, gateupdatecacheFlags, gateupdatecacheGPSstatus, gateupdatecacheGSM);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter , gateupdatecacheGateID, gateupdatecacheIMEI, gateupdatecacheEventID, gateupdatecacheTxTime, gateupdatecacheFxTime, gateupdatecacheFlags, gateupdatecacheGPSstatus, gateupdatecacheGSM");
+	}
+}
+
+function deletgateupdatecache() {
+	log.info("delet gateupdatecache ");
+	if(){
+	var db_qury = db_query_gateupdatecache_delet();
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter ");
+	}
+}
+
+function getgateupdatecache() {
+	log.info("get gateupdatecache ");
+	if(){
+	var db_qury = db_query_gateupdatecache_get();
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter ");
+	}
+}
+
+function invokeError(msg) {
+	log.info(msg);
+	return {
+		"error" : true,
+		"errorMsg" : msg
+	};
+}
+
+%>

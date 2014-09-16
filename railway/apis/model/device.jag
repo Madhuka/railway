@@ -1,0 +1,24 @@
+<%
+var db_query_device_view = "SELECT * FROM  `device` LIMIT 0 , 30";
+var db_query_device_create = "CREATE TABLE  `device` (`device_id` INT NOT NULL AUTO_INCREMENT, `device_IMEI` VARCHAR( 120 ) NOT NULL,`device_create_time` TIMESTAMP NOT NULL ,`device_modified_time` TIMESTAMP NOT NULL ,PRIMARY KEY (  `device_id` ))";
+
+function db_query_device_delet(device_id) {
+var outStr = "DELETE FROM `device` WHERE `device_id` = " + device_id + " LIMIT 1";
+return outStr;
+}
+
+function db_query_device_get(device_id) {
+var outStr = "SELECT *  FROM `device` WHERE `device_id` = " + device_id + " LIMIT 1";
+return outStr;
+}
+
+function db_query_device_add(device_id,device_IMEI) {
+var outStr = "INSERT INTO  `device` (`device_id`, `device_IMEI`,`device_create_time` ,`device_modified_time`)VALUES ("+device_id+",'"+device_IMEI+"',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);";
+return outStr;
+}
+
+function db_query_device_update(device_id,device_IMEI) {
+var outStr = "UPDATE  `device` SET  `device_IMEI` =  '"+device_IMEI+"',`device_modified_time` = CURRENT_TIMESTAMP WHERE  `device_id` =" + device_id + " LIMIT 1 ;";
+return outStr;
+}
+%>

@@ -1,0 +1,40 @@
+<%
+
+include("../model/dbinit.jag");
+include("../model/v1.jag");
+include("../controller/v1.jag");
+
+var action = request.getParameter('action');
+var deviceId = request.getParameter('deviceId');
+var gateId = request.getParameter('gateId');
+var deviceIMEI = request.getParameter('deviceIMEI');
+
+switch(action) {
+	case "listdevice":
+		print(listdevice());
+		break;
+	case "listdeviceevents":
+		print(listdeviceevents());
+		break;
+	case "listgateupdatecache":
+		print(listgateupdatecache());
+		break;
+	case "listlocations":
+		print(listlocations());
+		break;
+	case "getgateupdate":
+		print(getgateupdate(gateId));
+		break;
+		
+		case "gatelocationbygateid":
+				print(gatelocationbygateid(gateId));
+				break;
+		
+		case "listgatelocations":
+				print(listgatelocations());
+				break;
+	default:
+		print(invokeError("device action not define"));
+}
+
+%>
