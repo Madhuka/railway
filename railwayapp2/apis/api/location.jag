@@ -1,0 +1,37 @@
+<%
+
+include("../model/dbinit.jag");
+include("../model/location.jag");
+include("../controller/location.jag");
+
+ var action = request.getParameter('action');
+ var locationLocationID = request.getParameter('locationLocationID');
+ var locationLocationName = request.getParameter('locationLocationName');
+ var locationLocationAltitude = request.getParameter('locationLocationAltitude');
+ var locationLocationLatitude = request.getParameter('locationLocationLatitude');
+ var locationLocationLongitude = request.getParameter('locationLocationLongitude');
+
+switch(action) {
+case "listlocation":
+		print(listlocation());
+		break;
+	case "addlocation":
+		print(addlocation(locationLocationID, locationLocationName, locationLocationAltitude, locationLocationLatitude, locationLocationLongitude));
+		break;
+	case "updatelocation":
+		print(updatelocation(locationLocationID, locationLocationName, locationLocationAltitude, locationLocationLatitude, locationLocationLongitude));
+		break;
+	case "deletlocation":
+		print(deletlocation());
+		break;
+	case "getlocation":
+		print(getlocation());
+		break;
+	case "settabel":
+		print(settabel());
+		break;
+	default:
+		print(invokeError("location action not define"));
+}
+
+%>

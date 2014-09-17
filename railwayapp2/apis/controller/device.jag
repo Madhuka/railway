@@ -1,0 +1,91 @@
+<%
+
+function listdevice() {
+	var db_qury = db_query_device_view;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function settabel() {
+	var db_qury = db_query_device_create;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function adddevice(deviceIMEI) {
+	log.info("add device");
+	if(deviceIMEI != null ){
+	var db_qury = db_query_device_add(null ,deviceIMEI);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter deviceIMEI");
+	}
+}
+
+function updatedevice(deviceId,deviceIMEI) {
+	log.info("update device");
+	if(deviceId != null  && deviceIMEI != null ){
+	var db_qury = db_query_device_update(deviceId ,deviceIMEI);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter deviceId, deviceIMEI");
+	}
+}
+
+function deletdevice(deviceId) {
+	log.info("delet device ");
+	if(deviceId != null ){
+	var db_qury = db_query_device_delet(deviceId);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter deviceId");
+	}
+}
+
+function getdevice(deviceId) {
+	log.info("get device ");
+	if(deviceId != null ){
+	var db_qury = db_query_device_get(deviceId);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter deviceId");
+	}
+}
+
+function invokeError(msg) {
+	log.info(msg);
+	return {
+		"error" : true,
+		"errorMsg" : msg
+	};
+}
+
+%>

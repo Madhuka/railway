@@ -1,0 +1,34 @@
+<%
+
+include("../model/dbinit.jag");
+include("../model/deviceevents.jag");
+include("../controller/deviceevents.jag");
+
+ var action = request.getParameter('action');
+ var deviceeventsEventID = request.getParameter('deviceeventsEventID');
+ var deviceeventsEvent = request.getParameter('deviceeventsEvent');
+
+switch(action) {
+case "listdeviceevents":
+		print(listdeviceevents());
+		break;
+	case "adddeviceevents":
+		print(adddeviceevents(deviceeventsEventID, deviceeventsEvent));
+		break;
+	case "updatedeviceevents":
+		print(updatedeviceevents(deviceeventsEventID, deviceeventsEvent));
+		break;
+	case "deletdeviceevents":
+		print(deletdeviceevents());
+		break;
+	case "getdeviceevents":
+		print(getdeviceevents());
+		break;
+	case "settabel":
+		print(settabel());
+		break;
+	default:
+		print(invokeError("deviceevents action not define"));
+}
+
+%>

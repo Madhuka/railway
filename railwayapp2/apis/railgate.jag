@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>MadhukaTestAPI-railgate</title>
+</head>
+<body>
+<h1>RailgateAPI</h1>
+<a href="api/railgate.jag?action=settabel">SetTableRailgate</a><br>
+<a href="api/railgate.jag?action=addrailgate&railgateGateID=18&railgateLocationID=18&">AddRailgate</a><br>
+<a href="api/railgate.jag?action=listrailgate">ListRailgate</a><br>
+<a href="api/railgate.jag?action=updaterailgate&&railgateGateID=18&railgateLocationID=18&">UpdateRailgate</a><br>
+<a href="api/railgate.jag?action=getrailgate&">GetRailgate</a><br>
+<a href="api/railgate.jag?action=deletrailgate&">DeletRailgate</a><br>
+<body>
+</html>

@@ -1,0 +1,91 @@
+<%
+
+function listgateupdates() {
+	var db_qury = db_query_gateupdates_view;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function settabel() {
+	var db_qury = db_query_gateupdates_create;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function addgateupdates(gateupdatesGateID, gateupdatesIMEI, gateupdatesEventID, gateupdatesTxTime, gateupdatesFxTime, gateupdatesFlags, gateupdatesGPSstatus, gateupdatesGSM) {
+	log.info("add gateupdates");
+	if(gateupdatesGateID != null && gateupdatesIMEI != null && gateupdatesEventID != null && gateupdatesTxTime != null && gateupdatesFxTime != null && gateupdatesFlags != null && gateupdatesGPSstatus != null && gateupdatesGSM != null ){
+	var db_qury = db_query_gateupdates_add(null ,gateupdatesGateID, gateupdatesIMEI, gateupdatesEventID, gateupdatesTxTime, gateupdatesFxTime, gateupdatesFlags, gateupdatesGPSstatus, gateupdatesGSM);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter gateupdatesGateID, gateupdatesIMEI, gateupdatesEventID, gateupdatesTxTime, gateupdatesFxTime, gateupdatesFlags, gateupdatesGPSstatus, gateupdatesGSM");
+	}
+}
+
+function updategateupdates(,gateupdatesGateID, gateupdatesIMEI, gateupdatesEventID, gateupdatesTxTime, gateupdatesFxTime, gateupdatesFlags, gateupdatesGPSstatus, gateupdatesGSM) {
+	log.info("update gateupdates");
+	if( && gateupdatesGateID != null && gateupdatesIMEI != null && gateupdatesEventID != null && gateupdatesTxTime != null && gateupdatesFxTime != null && gateupdatesFlags != null && gateupdatesGPSstatus != null && gateupdatesGSM != null ){
+	var db_qury = db_query_gateupdates_update( ,gateupdatesGateID, gateupdatesIMEI, gateupdatesEventID, gateupdatesTxTime, gateupdatesFxTime, gateupdatesFlags, gateupdatesGPSstatus, gateupdatesGSM);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter , gateupdatesGateID, gateupdatesIMEI, gateupdatesEventID, gateupdatesTxTime, gateupdatesFxTime, gateupdatesFlags, gateupdatesGPSstatus, gateupdatesGSM");
+	}
+}
+
+function deletgateupdates() {
+	log.info("delet gateupdates ");
+	if(){
+	var db_qury = db_query_gateupdates_delet();
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter ");
+	}
+}
+
+function getgateupdates() {
+	log.info("get gateupdates ");
+	if(){
+	var db_qury = db_query_gateupdates_get();
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter ");
+	}
+}
+
+function invokeError(msg) {
+	log.info(msg);
+	return {
+		"error" : true,
+		"errorMsg" : msg
+	};
+}
+
+%>

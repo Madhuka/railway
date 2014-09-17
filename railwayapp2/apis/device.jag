@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>MadhukaTestAPI-device</title>
+</head>
+<body>
+<h1>DeviceAPI</h1>
+<a href="api/device.jag?action=settabel">SetTableDevice</a><br>
+<a href="api/device.jag?action=adddevice&deviceIMEI=testString&">AddDevice</a><br>
+<a href="api/device.jag?action=listdevice">ListDevice</a><br>
+<a href="api/device.jag?action=updatedevice&deviceId=1&&deviceIMEI=testString&">UpdateDevice</a><br>
+<a href="api/device.jag?action=getdevice&deviceId=1&">GetDevice</a><br>
+<a href="api/device.jag?action=deletdevice&deviceId=1&">DeletDevice</a><br>
+<body>
+</html>

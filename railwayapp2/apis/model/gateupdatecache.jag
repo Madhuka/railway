@@ -1,0 +1,16 @@
+<%
+var db_query_gateupdatecache_view = "SELECT * FROM  `gateupdatecache` LIMIT 0 , 30";
+var db_query_gateupdatecache_create = "CREATE TABLE  `gateupdatecache` (, `gateupdatecache_GateID` INT NOT NULL, `gateupdatecache_IMEI` VARCHAR( 120 ) NOT NULL, `gateupdatecache_EventID` INT NOT NULL, `gateupdatecache_txTime` TIMESTAMP, `gateupdatecache_fxTime` TIMESTAMP, `gateupdatecache_flags` VARCHAR( 120 ) NOT NULL, `gateupdatecache_GPSstatus` VARCHAR( 120 ) NOT NULL, `gateupdatecache_GSM` VARCHAR( 120 ) NOT NULL,`gateupdatecache_create_time` TIMESTAMP NOT NULL ,`gateupdatecache_modified_time` TIMESTAMP NOT NULL ,)";
+
+
+
+function db_query_gateupdatecache_add(,gateupdatecache_GateID,gateupdatecache_IMEI,gateupdatecache_EventID,gateupdatecache_txTime,gateupdatecache_fxTime,gateupdatecache_flags,gateupdatecache_GPSstatus,gateupdatecache_GSM) {
+var outStr = "INSERT INTO  `gateupdatecache` (, `gateupdatecache_GateID`, `gateupdatecache_IMEI`, `gateupdatecache_EventID`, `gateupdatecache_txTime`, `gateupdatecache_fxTime`, `gateupdatecache_flags`, `gateupdatecache_GPSstatus`, `gateupdatecache_GSM`,`gateupdatecache_create_time` ,`gateupdatecache_modified_time`)VALUES (,'"+gateupdatecache_GateID+"','"+gateupdatecache_IMEI+"','"+gateupdatecache_EventID+"',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'"+gateupdatecache_flags+"','"+gateupdatecache_GPSstatus+"','"+gateupdatecache_GSM+"',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);";
+return outStr;
+}
+
+function db_query_gateupdatecache_update(,gateupdatecache_GateID,gateupdatecache_IMEI,gateupdatecache_EventID,gateupdatecache_txTime,gateupdatecache_fxTime,gateupdatecache_flags,gateupdatecache_GPSstatus,gateupdatecache_GSM) {
+var outStr = "UPDATE  `gateupdatecache` SET  `gateupdatecache_GateID` =  '"+gateupdatecache_GateID+"',`gateupdatecache_IMEI` =  '"+gateupdatecache_IMEI+"',`gateupdatecache_EventID` =  '"+gateupdatecache_EventID+"',`gateupdatecache_txTime` =  '"+gateupdatecache_txTime+"',`gateupdatecache_fxTime` =  '"+gateupdatecache_fxTime+"',`gateupdatecache_flags` =  '"+gateupdatecache_flags+"',`gateupdatecache_GPSstatus` =  '"+gateupdatecache_GPSstatus+"',`gateupdatecache_GSM` =  '"+gateupdatecache_GSM+"',`gateupdatecache_modified_time` = CURRENT_TIMESTAMP WHERE  `gateupdatecache_id` =" + gateupdatecache_id + " LIMIT 1 ;";
+return outStr;
+}
+%>

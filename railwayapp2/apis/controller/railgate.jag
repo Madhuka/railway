@@ -1,0 +1,91 @@
+<%
+
+function listrailgate() {
+	var db_qury = db_query_railgate_view;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function settabel() {
+	var db_qury = db_query_railgate_create;
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+}
+
+function addrailgate(railgateGateID, railgateLocationID) {
+	log.info("add railgate");
+	if(railgateGateID != null && railgateLocationID != null ){
+	var db_qury = db_query_railgate_add(null ,railgateGateID, railgateLocationID);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter railgateGateID, railgateLocationID");
+	}
+}
+
+function updaterailgate(railgateGateID, railgateLocationID) {
+	log.info("update railgate");
+	if( && railgateGateID != null && railgateLocationID != null ){
+	var db_qury = db_query_railgate_update(railgateGateID, railgateLocationID);
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter , railgateGateID, railgateLocationID");
+	}
+}
+
+function deletrailgate() {
+	log.info("delet railgate ");
+	if(){
+	var db_qury = db_query_railgate_delet();
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter ");
+	}
+}
+
+function getrailgate() {
+	log.info("get railgate ");
+	if(){
+	var db_qury = db_query_railgate_get();
+	log.info(db_qury);
+	var results = db.query(db_qury);
+	return {
+		"error" : false,
+		"results" : results
+	};
+	}else {
+		return invokeError("Please enter ");
+	}
+}
+
+function invokeError(msg) {
+	log.info(msg);
+	return {
+		"error" : true,
+		"errorMsg" : msg
+	};
+}
+
+%>

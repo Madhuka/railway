@@ -1,0 +1,40 @@
+<%
+
+include("../model/dbinit.jag");
+include("../model/gateupdates.jag");
+include("../controller/gateupdates.jag");
+
+ var action = request.getParameter('action');
+ var gateupdatesGateID = request.getParameter('gateupdatesGateID');
+ var gateupdatesIMEI = request.getParameter('gateupdatesIMEI');
+ var gateupdatesEventID = request.getParameter('gateupdatesEventID');
+ var gateupdatesTxTime = request.getParameter('gateupdatesTxTime');
+ var gateupdatesFxTime = request.getParameter('gateupdatesFxTime');
+ var gateupdatesFlags = request.getParameter('gateupdatesFlags');
+ var gateupdatesGPSstatus = request.getParameter('gateupdatesGPSstatus');
+ var gateupdatesGSM = request.getParameter('gateupdatesGSM');
+
+switch(action) {
+case "listgateupdates":
+		print(listgateupdates());
+		break;
+	case "addgateupdates":
+		print(addgateupdates(gateupdatesGateID, gateupdatesIMEI, gateupdatesEventID, gateupdatesTxTime, gateupdatesFxTime, gateupdatesFlags, gateupdatesGPSstatus, gateupdatesGSM));
+		break;
+	case "updategateupdates":
+		print(updategateupdates(gateupdatesGateID, gateupdatesIMEI, gateupdatesEventID, gateupdatesTxTime, gateupdatesFxTime, gateupdatesFlags, gateupdatesGPSstatus, gateupdatesGSM));
+		break;
+	case "deletgateupdates":
+		print(deletgateupdates());
+		break;
+	case "getgateupdates":
+		print(getgateupdates());
+		break;
+	case "settabel":
+		print(settabel());
+		break;
+	default:
+		print(invokeError("gateupdates action not define"));
+}
+
+%>

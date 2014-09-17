@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Test API</title>
+</head>
+<body>
+<h1>DeviceAPI</h1>
+<a href="api/v1.jag?action=listdevice">ListDevice</a><br>
+<a href="api/v1.jag?action=listdeviceevents">List Device Events</a><br>
+<a href="api/v1.jag?action=listgateupdatecache">List Gate Update Cache</a><br>
+<a href="api/v1.jag?action=listlocations">List Locations</a><br>
+<a href="api/v1.jag?action=listgatelocations">List Gate Locations</a><br>
+<a href="api/v1.jag?action=getgateupdate&gateId=1">Get Gate update</a><br>
+<a href="api/v1.jag?action=gatelocationbygateid&gateId=1">Gate Location By GateId</a><br>
+
+<body>
+</html>

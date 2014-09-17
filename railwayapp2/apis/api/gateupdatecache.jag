@@ -1,0 +1,40 @@
+<%
+
+include("../model/dbinit.jag");
+include("../model/gateupdatecache.jag");
+include("../controller/gateupdatecache.jag");
+
+ var action = request.getParameter('action');
+ var gateupdatecacheGateID = request.getParameter('gateupdatecacheGateID');
+ var gateupdatecacheIMEI = request.getParameter('gateupdatecacheIMEI');
+ var gateupdatecacheEventID = request.getParameter('gateupdatecacheEventID');
+ var gateupdatecacheTxTime = request.getParameter('gateupdatecacheTxTime');
+ var gateupdatecacheFxTime = request.getParameter('gateupdatecacheFxTime');
+ var gateupdatecacheFlags = request.getParameter('gateupdatecacheFlags');
+ var gateupdatecacheGPSstatus = request.getParameter('gateupdatecacheGPSstatus');
+ var gateupdatecacheGSM = request.getParameter('gateupdatecacheGSM');
+
+switch(action) {
+case "listgateupdatecache":
+		print(listgateupdatecache());
+		break;
+	case "addgateupdatecache":
+		print(addgateupdatecache(gateupdatecacheGateID, gateupdatecacheIMEI, gateupdatecacheEventID, gateupdatecacheTxTime, gateupdatecacheFxTime, gateupdatecacheFlags, gateupdatecacheGPSstatus, gateupdatecacheGSM));
+		break;
+	case "updategateupdatecache":
+		print(updategateupdatecache(gateupdatecacheGateID, gateupdatecacheIMEI, gateupdatecacheEventID, gateupdatecacheTxTime, gateupdatecacheFxTime, gateupdatecacheFlags, gateupdatecacheGPSstatus, gateupdatecacheGSM));
+		break;
+	case "deletgateupdatecache":
+		print(deletgateupdatecache());
+		break;
+	case "getgateupdatecache":
+		print(getgateupdatecache());
+		break;
+	case "settabel":
+		print(settabel());
+		break;
+	default:
+		print(invokeError("gateupdatecache action not define"));
+}
+
+%>
