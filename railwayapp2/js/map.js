@@ -43,6 +43,8 @@ angular.module('mapsApp', [])
     }
 
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+	  
+      //google.maps.event.addDomListener(window, 'load', initialize);
 
     $scope.markers = [];
     
